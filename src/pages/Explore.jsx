@@ -3,7 +3,6 @@ import SubHeader from "../images/subheader.jpg";
 import ExploreItems from "../components/explore/ExploreItems";
 
 const Explore = () => {
-  // Does this work?
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
