@@ -13,12 +13,28 @@
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";
 
-.slick-prev:before,
-.slick-next:before {
-  color: black;
-}
-
 .slick-slide img {
-  margin: auto;
-  display: block;
-}
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+
+  .nft_coll_wrapper {
+    padding: 10px;
+  }
+  
+  .nft_coll {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nft_wrap img {
+    border-radius: 8px;
+  }
