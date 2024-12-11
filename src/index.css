@@ -10,8 +10,9 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 .slick-slide img {
     margin: auto;
     display: block;
@@ -26,8 +27,7 @@
   
   .nft_coll {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
   }
   
   .nft_wrap {
@@ -61,3 +61,4 @@
     border: 2px solid white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+  
