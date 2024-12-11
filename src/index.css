@@ -39,14 +39,6 @@
   }
 
   .nft__item {
-    margin: 15px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nft__item {
     margin: 0 15px;
     padding: 10px;
     background: none;
