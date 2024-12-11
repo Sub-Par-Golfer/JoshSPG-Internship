@@ -121,7 +121,7 @@ const HotCollections = () => {
             <Slider {...settings}>
               {data.map((collection) => (
                 <div className="nft_coll_wrapper" key={collection.id}>
-                  <div className="nft_coll">
+                  <div className="nft_coll_hot">
                     <div className="nft_wrap">
                       <img
                         src={collection.nftImage}

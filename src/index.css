@@ -24,10 +24,20 @@
   .slick-next:before {
     color: black;
   }
+
+  .nft_coll_wrapper {
+    padding: 10px;
+  }
   
   .nft_coll {
     background: #fff;
     border: none;
+    border-radius: 8px;
+  }
+  .nft_coll_hot {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .nft_wrap {
