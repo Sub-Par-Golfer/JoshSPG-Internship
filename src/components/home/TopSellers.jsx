@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -10,11 +11,10 @@ const TopSellers = () => {
   useEffect(() => {
     const fetchTopSellers = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
         );
-        const data = await response.json();
-        setTopSellers(data);
+        setTopSellers(response.data); // axios automatically parses JSON
         setLoading(false);
       } catch (error) {
         console.error("Error fetching top sellers:", error);
