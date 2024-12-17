@@ -110,6 +110,10 @@
   color: #333;
 }
 
+.author-page-content {
+  margin-top: 100px; /* Adjust spacing to prevent cutting off */
+}
+
 @media (max-width: 979px) {
   .nft__item {
     margin: 0 10px;
@@ -141,6 +145,11 @@
   .author_name {
     font-size: 16px;
   }
+
+  .author-page-content {
+    margin-top: 100px; /* Add more space for smaller screens if necessary */
+  }
+
 }
 
 @media (max-width: 480px) {
