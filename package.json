@@ -6,7 +6,6 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.9",
     "@types/react-slick": "^0.23.13",
     "axios": "^1.7.9",
     "firebase": "^9.8.4",
