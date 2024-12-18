@@ -111,7 +111,7 @@
 }
 
 .author-page-content {
-  margin-top: 100px; /* Adjust spacing to prevent cutting off */
+  margin-top: 100px;
 }
 
 @media (max-width: 979px) {
@@ -147,7 +147,7 @@
   }
 
   .author-page-content {
-    margin-top: 100px; /* Add more space for smaller screens if necessary */
+    margin-top: 100px;
   }
 
 }
