@@ -12,26 +12,23 @@ const ExploreItems = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [filter, setFilter] = useState(""); // State for the selected filter
 
-  // Fetch data from the API using Axios
   const fetchItems = async (selectedFilter = "") => {
     try {
-      setLoading(true); // Ensure loading state starts as true
+      setLoading(true); 
       const response = await axios.get(
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${selectedFilter}`
       );
       const currentTime = Math.floor(Date.now() / 1000);
 
-      // Map and add countdown
       const updatedItems = response.data.map((item) => ({
         ...item,
         countdown: item.expiryDate - currentTime,
       }));
 
-      // Simulate a loading delay for testing
       setTimeout(() => {
         setItems(updatedItems);
-        setLoading(false); // End loading state
-      }, 1500); // 1.5 second delay
+        setLoading(false);
+      }, 1500);
     } catch (error) {
       console.error("Error fetching items:", error);
       setLoading(false);
@@ -40,7 +37,7 @@ const ExploreItems = () => {
 
   useEffect(() => {
     fetchItems(filter);
-  }, [filter]); // Refetch items when the filter changes
+  }, [filter]);
 
   const loadMore = () => {
     setVisibleItems((prev) => prev + 4);
@@ -125,7 +122,7 @@ const ExploreItems = () => {
                     {formatCountdown(item.countdown)}
                   </div>
                   <div className="nft__item_wrap">
-                    <Link to={`/item-details/${item.id}`}>
+                    <Link to={`/item-details/${item.nftId}`}>
                       <img
                         src={item.nftImage || nftImage}
                         className="lazy nft__item_preview"
@@ -134,7 +131,7 @@ const ExploreItems = () => {
                     </Link>
                   </div>
                   <div className="nft__item_info">
-                    <Link to={`/item-details/${item.id}`}>
+                    <Link to={`/item-details/${item.nftId}`}>
                       <h4>{item.title || "Unnamed Item"}</h4>
                     </Link>
                     <div className="nft__item_price">

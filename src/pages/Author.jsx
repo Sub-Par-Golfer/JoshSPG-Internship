@@ -5,11 +5,11 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Author = () => {
-  const { authorId } = useParams(); // Get dynamic authorId from URL
-  const [authorData, setAuthorData] = useState(null); // Author details
-  const [loading, setLoading] = useState(true); // Loading state
-  const [isFollowing, setIsFollowing] = useState(false); // Follow/Unfollow state
-  const [followerCount, setFollowerCount] = useState(0); // Dynamic follower count
+  const { authorId } = useParams();
+  const [authorData, setAuthorData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [followerCount, setFollowerCount] = useState(0);
 
   // Fetch Author Data
   const fetchAuthorData = async () => {
@@ -19,7 +19,7 @@ const Author = () => {
         `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${authorId}`
       );
       setAuthorData(response.data);
-      setFollowerCount(response.data.followers || 0); // Set initial follower count
+      setFollowerCount(response.data.followers || 0);
     } catch (error) {
       console.error("Error fetching author data:", error);
     } finally {
@@ -31,12 +31,11 @@ const Author = () => {
     fetchAuthorData();
   }, [authorId]);
 
-  // Toggle Follow/Unfollow and Adjust Follower Count
   const handleFollowToggle = () => {
-    setIsFollowing((prevState) => !prevState); // Toggle follow state
+    setIsFollowing((prevState) => !prevState);
     setFollowerCount((prevCount) =>
       isFollowing ? prevCount - 1 : prevCount + 1
-    ); // Adjust count
+    );
   };
 
   return (
