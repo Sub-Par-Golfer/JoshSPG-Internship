@@ -33,11 +33,14 @@
     background: #fff;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
   }
   .nft_coll_hot {
     background: #fff;
     border-radius: 8px;
+    text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
   
   .nft_wrap {
@@ -112,6 +115,35 @@
 
 .author-page-content {
   margin-top: 100px;
+}
+
+.author_list_pp_de {
+  position: relative;
+}
+
+.author_list_pp_de img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.author_list_pp_de .fa-check {
+  position: relative;
+  right: 16px;
+  top: 20px;
+  background-color: #a952db;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.mr40 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
 }
 
 @media (max-width: 979px) {

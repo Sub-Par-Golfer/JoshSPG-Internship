@@ -12,7 +12,6 @@ const ExploreItems = () => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
 
-  
   const fetchItems = async (selectedFilter = "") => {
     try {
       setLoading(true); 
@@ -26,7 +25,6 @@ const ExploreItems = () => {
         countdown: item.expiryDate - currentTime,
       }));
 
-      
       setTimeout(() => {
         setItems(updatedItems);
         setLoading(false);
@@ -40,6 +38,7 @@ const ExploreItems = () => {
   useEffect(() => {
     fetchItems(filter);
   }, [filter]);
+
   const loadMore = () => {
     setVisibleItems((prev) => prev + 4);
   };
@@ -123,7 +122,7 @@ const ExploreItems = () => {
                     {formatCountdown(item.countdown)}
                   </div>
                   <div className="nft__item_wrap">
-                    <Link to={`/item-details/${item.id}`}>
+                    <Link to={`/item-details/${item.nftId}`}>
                       <img
                         src={item.nftImage || nftImage}
                         className="lazy nft__item_preview"
@@ -132,7 +131,7 @@ const ExploreItems = () => {
                     </Link>
                   </div>
                   <div className="nft__item_info">
-                    <Link to={`/item-details/${item.id}`}>
+                    <Link to={`/item-details/${item.nftId}`}>
                       <h4>{item.title || "Unnamed Item"}</h4>
                     </Link>
                     <div className="nft__item_price">
