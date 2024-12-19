@@ -5,13 +5,14 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Author = () => {
+
   const { authorId } = useParams();
   const [authorData, setAuthorData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isFollowing, setIsFollowing] = useState(false);
   const [followerCount, setFollowerCount] = useState(0);
 
-  // Fetch Author Data
+  
   const fetchAuthorData = async () => {
     try {
       setLoading(true);
@@ -35,7 +36,6 @@ const Author = () => {
     setIsFollowing((prevState) => !prevState);
     setFollowerCount((prevCount) =>
       isFollowing ? prevCount - 1 : prevCount + 1
-    );
   };
 
   return (

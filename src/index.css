@@ -114,7 +114,7 @@
 }
 
 .author-page-content {
-  margin-top: 100px; /* Adjust spacing to prevent cutting off */
+  margin-top: 100px;
 }
 
 .author_list_pp_de {
@@ -179,7 +179,7 @@
   }
 
   .author-page-content {
-    margin-top: 100px; /* Add more space for smaller screens if necessary */
+    margin-top: 100px;
   }
 
 }

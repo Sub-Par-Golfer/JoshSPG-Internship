@@ -7,10 +7,10 @@ import AuthorImage from "../../images/author_thumbnail.jpg";
 import nftImage from "../../images/nftImage.jpg";
 
 const ExploreItems = () => {
-  const [items, setItems] = useState([]); // State to store fetched items
-  const [visibleItems, setVisibleItems] = useState(8); // Number of visible items
-  const [loading, setLoading] = useState(true); // Loading state
-  const [filter, setFilter] = useState(""); // State for the selected filter
+  const [items, setItems] = useState([]);
+  const [visibleItems, setVisibleItems] = useState(8);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("");
 
   const fetchItems = async (selectedFilter = "") => {
     try {
