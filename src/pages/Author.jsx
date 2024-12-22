@@ -35,7 +35,7 @@ const Author = () => {
   const handleFollowToggle = () => {
     setIsFollowing((prevState) => !prevState);
     setFollowerCount((prevCount) =>
-      isFollowing ? prevCount - 1 : prevCount + 1
+      isFollowing ? prevCount - 1 : prevCount + 1)
   };
 
   return (
