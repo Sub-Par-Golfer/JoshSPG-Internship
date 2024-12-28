@@ -85,32 +85,38 @@ const NewItems = () => {
   if (loading) {
     return (
       <section id="section-items" className="no-bottom">
-        <div className="container">
-          <div className="text-center">
-            <h2>New Items</h2>
-            <div className="small-border bg-color-2"></div>
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="2500"
+        >
+          <div className="container">
+            <div className="text-center">
+              <h2>New Items</h2>
+              <div className="small-border bg-color-2"></div>
+            </div>
+            <Slider {...settings}>
+              {Array.from({ length: 4 }).map((_, index) => (
+                <div className="nft__item" key={index}>
+                  <div className="author_list_pp">
+                    <Skeleton circle height={50} width={50} />
+                  </div>
+                  <div className="de_countdown">
+                    <Skeleton width="70%" />
+                  </div>
+                  <div className="nft__item_wrap">
+                    <Skeleton height={200} width="100%" />
+                  </div>
+                  <div className="nft__item_info">
+                    <h4>
+                      <Skeleton width="60%" />
+                    </h4>
+                    <Skeleton width="40%" />
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
-          <Slider {...settings}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <div className="nft__item" key={index}>
-                <div className="author_list_pp">
-                  <Skeleton circle height={50} width={50} />
-                </div>
-                <div className="de_countdown">
-                  <Skeleton width="70%" />
-                </div>
-                <div className="nft__item_wrap">
-                  <Skeleton height={200} width="100%" />
-                </div>
-                <div className="nft__item_info">
-                  <h4>
-                    <Skeleton width="60%" />
-                  </h4>
-                  <Skeleton width="40%" />
-                </div>
-              </div>
-            ))}
-          </Slider>
         </div>
       </section>
     );
@@ -122,45 +128,51 @@ const NewItems = () => {
 
   return (
     <section id="section-items" className="no-bottom">
-      <div className="container">
-        <div className="text-center">
-          <h2>New Items</h2>
-          <div className="small-border bg-color-2"></div>
-        </div>
-        <Slider {...settings}>
-          {data.map((item) => (
-            <div className="nft_coll" key={item.id}>
-            <div className="nft__item" key={item.id}>
-              <div className="author_list_pp">
-                <img
-                  className="lazy"
-                  src={item.authorImage}
-                  alt={item.creator}
-                />
-                <i className="fa fa-check"></i>
-              </div>
-              <div className="de_countdown">
-                {formatCountdown(item.countdown)}
-              </div>
-              <div className="nft__item_wrap">
-                <img
-                  src={item.nftImage}
-                  className="lazy nft__item_preview"
-                  alt={item.name}
-                />
-              </div>
-              <div className="nft__item_info">
-                <h4>{item.title}</h4>
-                <div>{item.price} ETH</div>
-                <div className="nft__item_like">
-                  <i className="fa fa-heart"></i>
-                  <span>{item.likes}</span>
+      <div
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="2500"
+      >
+        <div className="container">
+          <div className="text-center">
+            <h2>New Items</h2>
+            <div className="small-border bg-color-2"></div>
+          </div>
+          <Slider {...settings}>
+            {data.map((item) => (
+              <div className="nft_coll" key={item.id}>
+                <div className="nft__item" key={item.id}>
+                  <div className="author_list_pp">
+                    <img
+                      className="lazy"
+                      src={item.authorImage}
+                      alt={item.creator}
+                    />
+                    <i className="fa fa-check"></i>
+                  </div>
+                  <div className="de_countdown">
+                    {formatCountdown(item.countdown)}
+                  </div>
+                  <div className="nft__item_wrap">
+                    <img
+                      src={item.nftImage}
+                      className="lazy nft__item_preview"
+                      alt={item.name}
+                    />
+                  </div>
+                  <div className="nft__item_info">
+                    <h4>{item.title}</h4>
+                    <div>{item.price} ETH</div>
+                    <div className="nft__item_like">
+                      <i className="fa fa-heart"></i>
+                      <span>{item.likes}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );
