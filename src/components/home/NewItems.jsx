@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const NewItems = () => {
   const [data, setData] = useState([]);
@@ -143,22 +144,28 @@ const NewItems = () => {
               <div className="nft_coll" key={item.id}>
                 <div className="nft__item" key={item.id}>
                   <div className="author_list_pp">
-                    <img
-                      className="lazy"
-                      src={item.authorImage}
-                      alt={item.creator}
-                    />
-                    <i className="fa fa-check"></i>
+                    {/* Link to the Author */}
+                    <Link to={`/author/${item.authorId}`}>
+                      <img
+                        className="lazy"
+                        src={item.authorImage}
+                        alt={item.creator}
+                      />
+                      <i className="fa fa-check"></i>
+                    </Link>
                   </div>
                   <div className="de_countdown">
                     {formatCountdown(item.countdown)}
                   </div>
                   <div className="nft__item_wrap">
-                    <img
-                      src={item.nftImage}
-                      className="lazy nft__item_preview"
-                      alt={item.name}
-                    />
+                    {/* Link to the NFT Details */}
+                    <Link to={`/item-details/${item.nftId}`}>
+                      <img
+                        src={item.nftImage}
+                        className="lazy nft__item_preview"
+                        alt={item.name}
+                      />
+                    </Link>
                   </div>
                   <div className="nft__item_info">
                     <h4>{item.title}</h4>
