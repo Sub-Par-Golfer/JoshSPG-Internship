@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const HotCollections = () => {
@@ -134,19 +135,25 @@ const HotCollections = () => {
                   <div className="nft_coll_wrapper" key={collection.id}>
                     <div className="nft_coll_hot">
                       <div className="nft_wrap">
-                        <img
-                          src={collection.nftImage}
-                          className="lazy img-fluid"
-                          alt={collection.name}
-                        />
+                        {/* Link to NFT details */}
+                        <Link to={`/item-details/${collection.nftId}`}>
+                          <img
+                            src={collection.nftImage}
+                            className="lazy img-fluid"
+                            alt={collection.name}
+                          />
+                        </Link>
                       </div>
                       <div className="nft_coll_pp">
-                        <img
-                          className="lazy pp-coll"
-                          src={collection.authorImage}
-                          alt={collection.author}
-                        />
-                        <i className="fa fa-check"></i>
+                        {/* Link to Author */}
+                        <Link to={`/author/${collection.authorId}`}>
+                          <img
+                            className="lazy pp-coll"
+                            src={collection.authorImage}
+                            alt={collection.author}
+                          />
+                          <i className="fa fa-check"></i>
+                        </Link>
                       </div>
                       <div className="nft_coll_info">
                         <h4>{collection.title}</h4>

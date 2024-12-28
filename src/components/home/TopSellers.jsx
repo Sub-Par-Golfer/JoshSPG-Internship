@@ -14,7 +14,7 @@ const TopSellers = () => {
         const response = await axios.get(
           "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
         );
-        setTopSellers(response.data); // axios automatically parses JSON
+        setTopSellers(response.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching top sellers:", error);
@@ -64,10 +64,10 @@ const TopSellers = () => {
                               alt={seller.name}
                             />
                             <i className="fa fa-check"></i>
-                          </Link>
                           <span className="author_name">
                             {seller.authorName}
                           </span>
+                          </Link>
                         </div>
                         <div className="author_list_info">
                           <Link to={`/author/${seller.authorId}`}>

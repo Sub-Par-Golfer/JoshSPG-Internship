@@ -146,6 +146,27 @@
 
 }
 
+.btn-connect-wallet {
+  background-color: #a952db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-connect-wallet:hover {
+  background-color: #913ccd;
+  transform: translateY(-2px);
+}
+
+.btn-connect-wallet:active {
+  transform: translateY(1px);
+}
+
 @media (max-width: 979px) {
   .nft__item {
     margin: 0 10px;
