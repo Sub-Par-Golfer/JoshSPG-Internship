@@ -25,10 +25,8 @@ const ExploreItems = () => {
         countdown: item.expiryDate - currentTime,
       }));
 
-      setTimeout(() => {
-        setItems(updatedItems);
-        setLoading(false);
-      }, 1000);
+      setItems(updatedItems);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching items:", error);
       setLoading(false);
@@ -38,6 +36,19 @@ const ExploreItems = () => {
   useEffect(() => {
     fetchItems(filter);
   }, [filter]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setItems((prevItems) =>
+        prevItems.map((item) => ({
+          ...item,
+          countdown: item.countdown > 0 ? item.countdown - 1 : 0,
+        }))
+      );
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup interval on unmount
+  }, [items]);
 
   const loadMore = () => {
     setVisibleItems((prev) => prev + 4);
