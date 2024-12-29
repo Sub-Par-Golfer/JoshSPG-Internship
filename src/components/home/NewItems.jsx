@@ -23,10 +23,8 @@ const NewItems = () => {
           return { ...item, countdown: remainingTime > 0 ? remainingTime : 0 };
         });
 
-        setTimeout(() => {
-          setData(itemsWithCountdown);
-          setLoading(false);
-        }, 2000);
+        setData(itemsWithCountdown);
+        setLoading(false);
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -35,6 +33,19 @@ const NewItems = () => {
 
     fetchNewItems();
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setData((prevData) =>
+        prevData.map((item) => ({
+          ...item,
+          countdown: item.countdown > 0 ? item.countdown - 1 : 0,
+        }))
+      );
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup interval on component unmount
+  }, [data]);
 
   const formatCountdown = (seconds) => {
     if (seconds <= 0) return "Expired";
